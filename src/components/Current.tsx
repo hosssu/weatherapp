@@ -36,9 +36,9 @@ const Current: React.FC<CurrentProps> = (props) => {
                                 <div className='weather-info'> Tuulennopeus:  m/s</div>
 
                             </div>
+                            <NavBar />
                         </div>
                     </div>
-                    <NavBar />
                 </div> : (
                     <div className='main-container'>
                         <div className='home'>
@@ -57,9 +57,9 @@ const Current: React.FC<CurrentProps> = (props) => {
                                     <div className='weather-info'> Tuulennopeus: {Current.wind.speed} m/s</div>
 
                                 </div>
+                                <NavBar />
                             </div>
                         </div>
-                        <NavBar />
                     </div>
                 )}</>
             )

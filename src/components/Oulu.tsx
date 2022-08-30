@@ -36,9 +36,9 @@ const Oulu: React.FC<OuluProps> = (props) => {
                                 <div className='weather-info'> Tuulennopeus:  m/s</div>
 
                             </div>
+                            <NavBar />
                         </div>
                     </div>
-                    <NavBar />
                 </div> : (
                     <div className='main-container'>
                         <div className='home'>
@@ -57,9 +57,11 @@ const Oulu: React.FC<OuluProps> = (props) => {
                                     <div className='weather-info'> Tuulennopeus: {Oulu.wind.speed} m/s</div>
 
                                 </div>
+                                <NavBar />
                             </div>
+
                         </div>
-                        <NavBar />
+
                     </div>
                 )}</>
 
