@@ -25,7 +25,7 @@ const Helsinki: React.FC<HelsinkiProps> = (props) => {
                     <div className='home'>
                         <div className='weather-info-outer'>
                             <div className='weather-info-inner'>
-                                <div className='weather-info'>No location specified</div>
+                                <div className='weather-info'>Ei sijaintia</div>
                                 <div className='weather-info'>- &#176;</div>
                                 <div className='weather-info'></div>
                             </div>

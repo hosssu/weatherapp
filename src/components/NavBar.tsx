@@ -15,7 +15,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
 
                         <Link to='/Oulu'><div className='nav-element'> Oulu</div> </Link>
                         <Link to='/Helsinki'> <div className='nav-element'>Helsinki </div></Link>
-                        <Link to='/' onClick={context.getCurrent}><div className='nav-element'> Current location </div></Link>
+                        <Link to='/' onClick={context.getCurrent}><div className='nav-element'> Nykyinen sijainti </div></Link>
                     </div>
                 </div>
             )
