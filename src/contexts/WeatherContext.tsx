@@ -26,7 +26,7 @@ class WeatherContextProvider extends React.Component<WeatherContextProps> {
     }
 
     getWeather = async () => {
-        const API = ''
+        const API = '9f98155cef5918a4ee62ca995ded3e68'
         const resOulu = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Oulu&appid=${API}&units=metric&lang=fi`)
         const resHelsinki = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Helsinki&appid=${API}&units=metric&lang=fi`)
         this.setState({ Oulu: resOulu.data, Helsinki: resHelsinki.data })
@@ -43,7 +43,7 @@ class WeatherContextProvider extends React.Component<WeatherContextProps> {
 
     getCurrent = async () => {
         if (this.state.latitude) {
-            const API = ''
+            const API = '9f98155cef5918a4ee62ca995ded3e68'
             const lat = this.state.latitude
             const lon = this.state.longitude
             const resCurrent = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API}&units=metric&lang=fi`)
