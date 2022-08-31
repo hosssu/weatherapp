@@ -3,34 +3,26 @@ import axios from 'axios'
 
 export interface WeatherContextProps {
     children?: React.ReactNode
-
 }
 
 export const WeatherContext = createContext<any | undefined>(undefined);
 
 class WeatherContextProvider extends React.Component<WeatherContextProps> {
 
-    state = { Current: [], Oulu: [], Helsinki: [], latitude: '', longitude: '', CheckCurrent: false }
+    state = { Current: [], Oulu: [], Helsinki: [], latitude: '', longitude: '' }
 
     componentDidMount() {
         this.getWeather()
+        this.setState({ CheckCurrent: false })
         this.getLocation(this.state.latitude, this.state.longitude)
-
     }
 
     getLocation = async (latitude: string, longitude: string) => {
         await window.navigator.geolocation.getCurrentPosition(
             (position) => {
-                this.setState({ latitude: position.coords.latitude, longitude: position.coords.longitude, CheckCurrent: true })
+                this.setState({ latitude: position.coords.latitude, longitude: position.coords.longitude }, this.getCurrent)
             }
         )
-
-    }
-
-    componentDidUpdate(prevState: any) {
-        if (prevState.CheckCurrent !== this.state.CheckCurrent) {
-            this.getCurrent()
-        }
     }
 
     getWeather = async () => {
@@ -42,7 +34,6 @@ class WeatherContextProvider extends React.Component<WeatherContextProps> {
         console.log(time)
         this.getCurrent()
         this.timeout()
-
     }
 
     timeout() {
